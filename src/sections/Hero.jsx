@@ -298,7 +298,7 @@ function HeroText() {
         ${
           i18n.language === "ta"
             ? "text-[32px] sm:text-[32px] md:text-[58px] leading-[1.3] font-semibold"
-            : "text-[34px] sm:text-[48px] md:text-[70px] leading-[0.95] font-semibold"
+            : "text-[34px] sm:text-[55px] md:text-[70px] leading-[0.95] font-semibold"
         }
       `}
     >
