@@ -41,94 +41,112 @@ export default function About() {
   const { t, i18n } = useTranslation();
 
 
-  return (
-    <section className="py-10 sm:py-10 bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-5 sm:px-6 grid md:grid-cols-2 gap-12 items-center">
+return (
+  <section className="py-10 sm:py-10 bg-white overflow-hidden">
 
-        {/* LEFT IMAGE */}
-        <div className="relative" data-aos="fade-right">
-          <img
-            src={houseImg}
-            alt="Modern House"
-            className="rounded-3xl shadow-lg object-cover w-full h-[320px] sm:h-[420px] md:h-full"
-          />
+    {/* MAIN CONTAINER */}
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-12 items-center">
 
-          {/* BADGE */}
-          <div className="absolute bottom-4 left-4 sm:bottom-5 sm:left-5 bg-[#0B1C2C] text-white px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl shadow-md"   data-aos="zoom-in"
-            data-aos-delay="200">
-            <p className="text-xl font-bold text-[oklch(0.47_0.17_28.33)]">10+</p>
-            <p className="text-xs">{t("experience")}</p>
-          </div>
+      {/* LEFT IMAGE */}
+      <div className="relative w-full" data-aos="fade-right">
+        <img
+          src={houseImg}
+          alt="Modern House"
+          className="rounded-3xl shadow-lg object-cover w-full h-[320px] sm:h-[420px] md:h-full"
+        />
+
+        {/* BADGE */}
+        <div
+          className="absolute bottom-4 left-4 sm:bottom-5 sm:left-5 bg-[#0B1C2C] text-white px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl shadow-md"
+          data-aos="zoom-in"
+          data-aos-delay="200"
+        >
+          <p className="text-xl font-bold text-[oklch(0.47_0.17_28.33)]">
+            10+
+          </p>
+          <p className="text-xs">{t("experience")}</p>
         </div>
+      </div>
 
-        {/* RIGHT CONTENT */}
-      
-        <div>
-          <p className="text-[oklch(0.47_0.17_28.33)] font-semibold mb-2 tracking-wide" data-aos="fade-left">
-            {t("aboutBadge")}
-          </p>
+      {/* RIGHT CONTENT */}
+      <div className="w-full overflow-hidden">
 
-          <h2
-  className={`mb-5 font-bold ${
-    i18n.language === "ta"
-      ? "text-4xl md:text-[30px] leading-[1.22] tracking-tight"
-      : "text-4xl md:text-5xl leading-tight"
-  }`}
->
-            {t("aboutTitle")}
-          </h2>
+        <p
+          className="text-[oklch(0.47_0.17_28.33)] font-semibold mb-2 tracking-wide"
+          data-aos="fade-left"
+        >
+          {t("aboutBadge")}
+        </p>
 
-          <p
-  className={`text-gray-600 max-w-xl ${
-    i18n.language === "ta"
-      ? "mb-5 leading-[2.1] text-[13px] tracking-[0.2px]"
-      : "mb-4 leading-relaxed"
-  }`}
->
-         {t("aboutDesc1")}
-          </p>
+        {/* TITLE */}
+        <h2
+          className={`font-bold ${
+            i18n.language === "ta"
+              ? "text-[25px] leading-[1.22] tracking-tight text-left break-words pr-1 mb-5"
+              : "text-4xl md:text-5xl leading-tight mb-5"
+          }`}
+        >
+          {t("aboutTitle")}
+        </h2>
 
-<p
-  className={`text-gray-600 max-w-xl ${
-    i18n.language === "ta"
-      ? "mb-7 leading-[2.1] text-[13px] tracking-[0.2px]"
-      : "mb-6 leading-relaxed"
-  }`}
->
+        {/* DESC 1 */}
+        <p
+          className={`text-gray-600 max-w-xl ${
+            i18n.language === "ta"
+              ? "mb-5 leading-[2] text-[14px] tracking-[0.2px] text-left break-words pr-2"
+              : "mb-4 leading-relaxed"
+          }`}
+        >
+          {t("aboutDesc1")}
+        </p>
+
+        {/* DESC 2 */}
+        <p
+          className={`text-gray-600 max-w-xl ${
+            i18n.language === "ta"
+              ? "mb-7 leading-[2] text-[14px] tracking-[0.2px] text-left break-words pr-2"
+              : "mb-6 leading-relaxed"
+          }`}
+        >
           {t("aboutDesc2")}
-          </p>
+        </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+        {/* POINTS */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
 
-            <Point icon={<FaCheckCircle />} text={t("aboutPoint1")} />
-            <Point icon={<FaUserTie />} text={t("aboutPoint2")} />
-            <Point icon={<FaClock />} text={t("aboutPoint3")} />
-            <Point icon={<FaMoneyBillWave />} text={t("aboutPoint4")} />
+          <Point icon={<FaCheckCircle />} text={t("aboutPoint1")} />
+          <Point icon={<FaUserTie />} text={t("aboutPoint2")} />
+          <Point icon={<FaClock />} text={t("aboutPoint3")} />
+          <Point icon={<FaMoneyBillWave />} text={t("aboutPoint4")} />
 
-          </div>
-
-          {/* CTA */}
-<Link
-  to="/about"
-  className="inline-block bg-[#0B1C2C] text-white px-6 py-3 rounded-xl text-sm font-semibold hover:bg-black transition cursor-pointer"
->
-  {t("aboutBtn")}
-</Link>
         </div>
 
-      </div>
-
-      {/* STATS */}
-      <div className="max-w-7xl mx-auto px-6 mt-14 grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-4 text-center" data-aos="fade-up">
-
-        <Stat number="150+" label={t("aboutStat1")}  delay="0" />
-        <Stat number="100+" label={t("aboutStat2")} delay="100" />
-        <Stat number="10+" label={t("aboutStat3")} delay="200" />
-        <Stat number="50+" label={t("aboutStat4")}delay="300"  />
+        {/* CTA */}
+        <Link
+          to="/about"
+          className="inline-block bg-[#0B1C2C] text-white px-6 py-3 rounded-xl text-sm font-semibold hover:bg-black transition cursor-pointer"
+        >
+          {t("aboutBtn")}
+        </Link>
 
       </div>
-    </section>
-  );
+    </div>
+
+    {/* STATS */}
+    <div
+      className="max-w-7xl mx-auto px-4 sm:px-6 mt-14 grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-4 text-center"
+      data-aos="fade-up"
+    >
+
+      <Stat number="150+" label={t("aboutStat1")} delay="0" />
+      <Stat number="100+" label={t("aboutStat2")} delay="100" />
+      <Stat number="10+" label={t("aboutStat3")} delay="200" />
+      <Stat number="50+" label={t("aboutStat4")} delay="300" />
+
+    </div>
+
+  </section>
+);
 }
 
 /* ===== POINT ===== */
