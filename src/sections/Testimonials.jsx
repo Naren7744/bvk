@@ -61,44 +61,55 @@ export default function Testimonials() {
     return () => clearInterval(interval);
   }, []);
 
-    const current = testimonialList[active];
-
+  const current = testimonialList[active];
 
   return (
     <section className="py-15 bg-gray-100 overflow-hidden bg-white">
-      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+
+      {/* MAIN CONTAINER */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-12 items-center">
 
         {/* LEFT SIDE */}
-        <div data-aos="fade-right" key={active}>
+        <div
+          data-aos="fade-right"
+          key={active}
+          className="w-full overflow-hidden"
+        >
 
           <p className="text-[oklch(0.47_0.17_28.33)] font-semibold mb-2">
             {t("testBadge")}
           </p>
 
+          {/* HEADING */}
           <h2
-  className={`font-bold mb-6 ${
-    i18n.language === "ta"
-      ? "text-[32px] leading-[1.3]"
-      : "text-4xl"
-  }`}
->
+            className={`font-bold break-words ${
+              i18n.language === "ta"
+                ? "text-[28px] leading-[1.45] text-left pr-2 mb-6"
+                : "text-4xl mb-6"
+            }`}
+          >
             {t("testTitle")}
           </h2>
-         <p   className={`text-gray-700 mb-8 data-aos="fade-up" ${
-  i18n.language === "ta"
-    ? "text-[14px] leading-[2]"
-    : "text-xl leading-relaxed"
-}`}  >
-  “{current.text}”
-</p>
 
-       
+          {/* TESTIMONIAL TEXT */}
+          <p
+            className={`text-gray-700 mb-8 break-words ${
+              i18n.language === "ta"
+                ? "text-[14px] leading-[2] text-left pr-2"
+                : "text-xl leading-relaxed"
+            }`}
+            data-aos="fade-up"
+          >
+            “{current.text}”
+          </p>
 
-          <div 
+          {/* USER INFO */}
+          <div
             className="flex items-center gap-4"
             data-aos="fade-up"
             data-aos-delay="150"
           >
+
             <img
               src={current.image}
               alt={current.name}
@@ -109,16 +120,24 @@ export default function Testimonials() {
               <h3 className="font-semibold text-lg">
                 {current.name}
               </h3>
-              <p className="text-gray-500 text-sm">
+
+              <p
+                className={`text-gray-500 ${
+                  i18n.language === "ta"
+                    ? "text-[13px] leading-[1.8]"
+                    : "text-sm"
+                }`}
+              >
                 {current.role}
               </p>
             </div>
+
           </div>
 
         </div>
 
         {/* RIGHT SIDE LIST */}
-        <div className="space-y-4" data-aos="fade-left">
+        <div className="space-y-4 w-full overflow-hidden" data-aos="fade-left">
 
           {testimonialList.map((t, i) => (
             <div
@@ -132,30 +151,36 @@ export default function Testimonials() {
                   : "bg-white hover:shadow-md"
               }`}
             >
+
               <img
                 src={t.image}
                 alt={t.name}
                 className="w-12 h-12 rounded-full object-cover"
               />
 
-              <div>
-                <h4 className="font-semibold">{t.name}</h4>
+              <div className="overflow-hidden">
+                <h4 className="font-semibold break-words">
+                  {t.name}
+                </h4>
+
                 <p
-  className={`opacity-70 ${
-    i18n.language === "ta"
-      ? "text-[13px] leading-[1.8]"
-      : "text-sm"
-  }`}
->
-  {t.role}
-</p>
+                  className={`opacity-70 break-words ${
+                    i18n.language === "ta"
+                      ? "text-[13px] leading-[1.8]"
+                      : "text-sm"
+                  }`}
+                >
+                  {t.role}
+                </p>
               </div>
+
             </div>
           ))}
 
         </div>
 
       </div>
+
     </section>
   );
 }
