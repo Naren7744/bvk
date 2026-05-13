@@ -92,10 +92,10 @@ ${
     hidden md:flex items-center font-medium
     ${
       i18n.language === "ta"
-        ? "gap-7 text-[14px]"
-        : "gap-10 text-[15px]"
+        ? "gap-7 text-[13px]"
+        : "gap-11 text-[16px]"
     }
-    mx-auto
+    mx-auto 
   `}
 >
       {links.map((link) => (
