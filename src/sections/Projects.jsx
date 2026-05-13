@@ -123,7 +123,7 @@ const projectList = projects(t);
   if (!project) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 overflow-hidden">
+    <div className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 overflow-hidden bg-white">
 
       {/* Close */}
       <button
@@ -176,7 +176,7 @@ const projectList = projects(t);
   }, []);
 
   return (
-    <section className="py-14 sm:py-16 bg-gray-100 overflow-hidden">
+    <section className="py-14 sm:py-16 bg-gray-100 overflow-hidden bg-white">
       <div className="max-w-7xl mx-auto px-5 sm:px-6">
 
         <div className="text-center mb-14" data-aos="fade-down">

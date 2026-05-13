@@ -45,9 +45,9 @@ export default function Contact() {
   }, []);
 
   return (
-    <section className="pt-[calc(var(--nav-height)+60px)] sm:pt-[calc(var(--nav-height)+10px)] bg-white text-[#111] ">
+    <section className=" overflow-hidden pt-[calc(var(--nav-height)+60px)] sm:pt-[calc(var(--nav-height)+10px)] bg-white text-[#111] ">
 
-<div  className="max-w-7xl mx-auto px-6 overflow-hidden">
+
         {/*  HERO */}
       <div className="  max-w-6xl mx-auto px-6  pb-8 text-center"  data-aos="fade-down">
         <p className="text-[oklch(0.47_0.17_28.33)] tracking-[5px] text-xs mb-3">
@@ -957,7 +957,7 @@ export default function Contact() {
   </div>
 
 </div>
-</div>
+
 
 
 </section>
