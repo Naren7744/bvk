@@ -63,8 +63,8 @@ const projects = [
     filter === "All" ? projects : projects.filter((p) => p.type === filter);
 
   return (
-    <section className="pt-[calc(var(--nav-height)+60px)] pb-15 overflow-hidden bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 overflow-hidden">
+    <section className="pt-[calc(var(--nav-height)+60px)] pb-15 overflow-hidden bg-white overflow-hidden">
+      <div className="max-w-7xl mx-auto  sm:px-0 overflow-hidden">
 
         {/* HEADER */}
         <div className="text-center mb-14" data-aos="fade-down">
