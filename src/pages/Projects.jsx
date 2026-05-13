@@ -64,7 +64,7 @@ const projects = [
 
   return (
     <section className="pt-[calc(var(--nav-height)+60px)] pb-15 overflow-hidden bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto  sm:px-0 overflow-hidden">
+      <div className="max-w-7xl mx-auto  sm:px-3 overflow-hidden">
 
         {/* HEADER */}
         <div className="text-center mb-14" data-aos="fade-down">
