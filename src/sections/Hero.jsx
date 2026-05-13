@@ -256,9 +256,15 @@ function Feature({ icon, title, desc }) {
     </div>
   );
 }
+
+
 function HeroText() {
 
-  const fullText = "DREAMS INTO";
+  const { t, i18n } = useTranslation();
+
+  const fullText = t("heroTitle1");
+
+  const staticText = t("heroTitle2");
 
   const [text, setText] = useState("");
 
@@ -272,7 +278,6 @@ function HeroText() {
 
       index++;
 
-      
       if (index > fullText.length) {
         index = 0;
       }
@@ -281,49 +286,49 @@ function HeroText() {
 
     return () => clearInterval(interval);
 
-  }, []);
+  }, [fullText]);
 
   return (
 
-<h1
-  className="
-    font-hero
-    text-[34px]
-    sm:text-[48px]
-    md:text-[70px]
-    leading-[0.95]
-    font-semibold
-    tracking-wide
-    text-white
-   
-  "
->
+    <h1
+      className={`
+        font-hero
+        tracking-wide
+        text-white
+        ${
+          i18n.language === "ta"
+            ? "text-[36px] sm:text-[36px] md:text-[58px] leading-[1.3] font-semibold"
+            : "text-[34px] sm:text-[48px] md:text-[70px] leading-[0.95] font-semibold"
+        }
+      `}
+    >
 
       {/* TYPEWRITER */}
-      <span className="block mb-3">
+      <span className="block mb-2">
 
         <span className="animated-gradient-text">
-  {text}
-</span>
+          {text}
+        </span>
 
         {/* BLINKING CURSOR */}
-       <span
-  className="
-    animate-pulse
-    text-[oklch(0.47_0.17_28.33)]
-    drop-shadow-[0_0_10px_rgba(255,120,120,0.9)]
-  "
->
-  |
-</span>
+        <span
+          className="
+            animate-pulse
+            text-[oklch(0.47_0.17_28.33)]
+            drop-shadow-[0_0_10px_rgba(255,120,120,0.9)]
+          "
+        >
+          |
+        </span>
 
       </span>
 
       {/* STATIC TEXT */}
-      <span className="block mt-[20px]">
-        REALITY
+      <span className="block mt-[15px]">
+        {staticText}
       </span>
 
     </h1>
   );
 }
+
