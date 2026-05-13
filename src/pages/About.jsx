@@ -49,7 +49,7 @@ export default function About() {
   return (
 <section className=" bg-white pt-[calc(var(--nav-height)+40px)] sm:pt-[calc(var(--nav-height)+10px)] bg-white text-[#0B1C2C] overflow-hidden">
 
-  <div className="max-w-6xl mx-auto px-5 sm:px-6">
+  <div className="max-w-7xl mx-auto px-3 sm:px-6">
 
     {/* HERO */}
     <div

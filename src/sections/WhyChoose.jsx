@@ -1,7 +1,8 @@
-import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useTranslation } from "react-i18next";
+import { useEffect, useState } from "react";
+
 
 export default function WhyChoose() {
   useEffect(() => {
@@ -114,30 +115,31 @@ export default function WhyChoose() {
 
         </div>
 
-        <div className="mt-20 grid md:grid-cols-3 gap-8 text-center" >
+{/* STATS */}
+<div className="mt-20 grid md:grid-cols-3 gap-8 text-center">
 
-          <div className="p-6 rounded-xl bg-white/[0.03] backdrop-blur-sm">
-            <h3 className="text-3xl font-bold text-[oklch(0.47_0.17_28.33)] mb-2" >
-              150+
-            </h3>
-            <p className="text-gray-400 text-sm">{t("whyStat1")}</p>
-          </div>
+  <div className="p-6 rounded-xl bg-white/[0.03] backdrop-blur-sm">
+    <h3 className="text-3xl font-bold text-[oklch(0.47_0.17_28.33)] mb-2">
+      <SmoothCount end={150} suffix="+" />
+    </h3>
+    <p className="text-gray-400 text-sm">{t("whyStat1")}</p>
+  </div>
 
-          <div className="p-6 rounded-xl bg-white/[0.03] backdrop-blur-sm">
-            <h3 className="text-3xl font-bold text-[oklch(0.47_0.17_28.33)] mb-2" >
-              10+
-            </h3>
-            <p className="text-gray-400 text-sm">{t("whyStat2")}</p>
-          </div>
+  <div className="p-6 rounded-xl bg-white/[0.03] backdrop-blur-sm">
+    <h3 className="text-3xl font-bold text-[oklch(0.47_0.17_28.33)] mb-2">
+      <SmoothCount end={10} suffix="+" />
+    </h3>
+    <p className="text-gray-400 text-sm">{t("whyStat2")}</p>
+  </div>
 
-          <div className="p-6 rounded-xl bg-white/[0.03] backdrop-blur-sm">
-            <h3 className="text-3xl font-bold text-[oklch(0.47_0.17_28.33)] mb-2" >
-              100%
-            </h3>
-            <p className="text-gray-400 text-sm">{t("whyStat3")}</p>
-          </div>
+  <div className="p-6 rounded-xl bg-white/[0.03] backdrop-blur-sm">
+    <h3 className="text-3xl font-bold text-[oklch(0.47_0.17_28.33)] mb-2">
+      <SmoothCount end={100} suffix="%" />
+    </h3>
+    <p className="text-gray-400 text-sm">{t("whyStat3")}</p>
+  </div>
 
-        </div>
+</div>
 
         {/* CTA */}
         <div className="mt-20 text-center" data-aos="zoom-in">
@@ -169,5 +171,66 @@ export default function WhyChoose() {
 
       </div>
     </section>
+  );
+}
+
+function SmoothCount({ end, suffix }) {
+
+  const [count, setCount] = useState(0);
+  const [start, setStart] = useState(false);
+
+  useEffect(() => {
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+
+        if (entry.isIntersecting) {
+          setStart(true);
+        } else {
+          setStart(false);
+          setCount(0);
+        }
+
+      },
+      { threshold: 0.5 }
+    );
+
+    const element = document.getElementById(`count-${end}`);
+
+    if (element) observer.observe(element);
+
+    return () => {
+      if (element) observer.unobserve(element);
+    };
+
+  }, [end]);
+
+  useEffect(() => {
+
+    if (!start) return;
+
+    let current = 0;
+
+    const interval = setInterval(() => {
+
+      current += Math.ceil(end / 50);
+
+      if (current >= end) {
+        current = end;
+        clearInterval(interval);
+      }
+
+      setCount(current);
+
+    }, 30);
+
+    return () => clearInterval(interval);
+
+  }, [start, end]);
+
+  return (
+    <span id={`count-${end}`}>
+      {count}{suffix}
+    </span>
   );
 }

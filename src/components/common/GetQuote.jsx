@@ -3,6 +3,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useTranslation } from "react-i18next";
 
+
 import quoteImg from "../../assets/images/quote_images/quote_img.jpg";
 
 export default function GetQuote() {
@@ -433,13 +434,8 @@ export default function GetQuote() {
             <span className="text-xs text-gray-500">{item.val}%</span>
           </div>
 
-          {/* BAR */}
-          <div className="w-full h-2 bg-gray-200 rounded mb-3">
-            <div
-              className="h-2 rounded bg-[oklch(0.47_0.17_28.33)]"
-              style={{ width: `${item.val}%` }}
-            ></div>
-          </div>
+{/* BAR */}
+<AnimatedBar value={item.val} />
 
           {/* DESC */}
 <p
@@ -768,8 +764,66 @@ export default function GetQuote() {
     </div>
 
   </div>
-)}
 
-    </section>
+)
+}
+    </section>   
+
+  );
+
+
+}
+function AnimatedBar({ value }) {
+
+  const [width, setWidth] = useState(0);
+
+  useEffect(() => {
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+
+        if (entry.isIntersecting) {
+
+          setWidth(0);
+
+          setTimeout(() => {
+            setWidth(value);
+          }, 100);
+
+        } else {
+
+          setWidth(0);
+
+        }
+
+      },
+      { threshold: 0.5 }
+    );
+
+    const element = document.getElementById(`bar-${value}`);
+
+    if (element) observer.observe(element);
+
+    return () => {
+      if (element) observer.unobserve(element);
+    };
+
+  }, [value]);
+
+  return (
+    <div
+      id={`bar-${value}`}
+      className="w-full h-2 bg-gray-200 rounded mb-3 overflow-hidden"
+    >
+
+      <div
+        className="h-full rounded bg-[oklch(0.47_0.17_28.33)]"
+        style={{
+          width: `${width}%`,
+          transition: "width 2s ease-in-out",
+        }}
+      />
+
+    </div>
   );
 }

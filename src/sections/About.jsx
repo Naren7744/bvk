@@ -13,6 +13,7 @@ import houseImg from "../assets/hservice_img/about_img.jpg";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+
 {/* LEFT IMAGE */}
 // {/* <div className="relative">
 //   <img
@@ -171,12 +172,78 @@ function Point({ icon, text }) {
 
 /* ===== STAT ===== */
 function Stat({ number, label, delay }) {
+
+  const finalValue = parseInt(number);
+
+  const [count, setCount] = useState(0);
+  const [startAnimation, setStartAnimation] = useState(false);
+
+  useEffect(() => {
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setStartAnimation(true);
+        } else {
+          setStartAnimation(false);
+          setCount(0);
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    const element = document.getElementById(`stat-${number}`);
+
+    if (element) observer.observe(element);
+
+    return () => {
+      if (element) observer.unobserve(element);
+    };
+
+  }, [number]);
+
+  useEffect(() => {
+
+    if (!startAnimation) return;
+
+    let startTimestamp = null;
+    const duration = 2000;
+
+    const step = (timestamp) => {
+
+      if (!startTimestamp) startTimestamp = timestamp;
+
+      const progress = Math.min(
+        (timestamp - startTimestamp) / duration,
+        1
+      );
+
+      setCount(Math.floor(progress * finalValue));
+
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      }
+    };
+
+    requestAnimationFrame(step);
+
+  }, [startAnimation, finalValue]);
+
   return (
-    <div data-aos="fade-up" data-aos-delay={delay}>
-      <h3 className="text-2xl font-bold text-[#0B1C2C]">{number}</h3>
+    <div
+      id={`stat-${number}`}
+      data-aos="fade-up"
+      data-aos-delay={delay}
+    >
+
+      <h3 className="text-2xl font-bold text-[#0B1C2C]">
+        {count}+
+      </h3>
+
       <p className="text-gray-600 text-sm leading-relaxed">
-  {label}
-</p>
+        {label}
+      </p>
+
     </div>
   );
 }

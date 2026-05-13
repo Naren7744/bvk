@@ -1,5 +1,4 @@
-import { useEffect } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useTranslation } from "react-i18next";
@@ -323,7 +322,7 @@ export default function Contact() {
         data-aos-delay="0"
       >
         <p className="text-2xl font-semibold text-[oklch(0.47_0.17_28.33)]">
-          150+
+          <ScrollCount end={150} suffix="+" />
         </p>
 
         <p
@@ -343,7 +342,7 @@ export default function Contact() {
         data-aos-delay="100"
       >
         <p className="text-2xl font-semibold text-[oklch(0.47_0.17_28.33)]">
-          10+
+          <ScrollCount end={10} suffix="+" />
         </p>
 
         <p
@@ -363,7 +362,7 @@ export default function Contact() {
         data-aos-delay="200"
       >
         <p className="text-2xl font-semibold text-[oklch(0.47_0.17_28.33)]">
-          24/7
+         <ScrollCount end={24} suffix="/7" />
         </p>
 
         <p
@@ -383,7 +382,7 @@ export default function Contact() {
         data-aos-delay="300"
       >
         <p className="text-2xl font-semibold text-[oklch(0.47_0.17_28.33)]">
-          100%
+         <ScrollCount end={100} suffix="%" />
         </p>
 
         <p
@@ -508,7 +507,7 @@ export default function Contact() {
     <div className="relative" data-aos="fade-left">
 
       {/* MAIN BOX */}
-      <div className="bg-white rounded-3xl shadow-xl p-10 text-center"  data-aos="zoom-in">
+      <div className="bg-white rounded-3xl shadow-sm p-10 text-center"  data-aos="zoom-in">
 
         <h3 className="text-2xl font-semibold mb-6">
           {t("successTitle")}
@@ -519,37 +518,38 @@ export default function Contact() {
         </p>
 
         {/* STATS */}
-        <div className="grid grid-cols-2 gap-6 text-sm">
+{/* STATS */}
+<div className="grid grid-cols-2 gap-6 text-sm">
 
-          <div data-aos="fade-up" data-aos-delay="0">
-            <p className="text-xl font-semibold text-[oklch(0.47_0.17_28.33)]">
-              10+
-            </p>
-            <p className="text-gray-500">Years Experience</p>
-          </div>
+  <div data-aos="fade-up" data-aos-delay="0">
+    <p className="text-xl font-semibold text-[oklch(0.47_0.17_28.33)]">
+      <SmoothStat end={10} suffix="+" />
+    </p>
+    <p className="text-gray-500">Years Experience</p>
+  </div>
 
-          <div  data-aos="fade-up" data-aos-delay="100">
-            <p className="text-xl font-semibold text-[oklch(0.47_0.17_28.33)]">
-              100%
-            </p>
-            <p className="text-gray-500">Transparency</p>
-          </div>
+  <div data-aos="fade-up" data-aos-delay="100">
+    <p className="text-xl font-semibold text-[oklch(0.47_0.17_28.33)]">
+      <SmoothStat end={100} suffix="%" />
+    </p>
+    <p className="text-gray-500">Transparency</p>
+  </div>
 
-          <div  data-aos="fade-up" data-aos-delay="200">
-            <p className="text-xl font-semibold text-[oklch(0.47_0.17_28.33)]">
-              24/7
-            </p>
-            <p className="text-gray-500">Support</p>
-          </div>
+  <div data-aos="fade-up" data-aos-delay="200">
+    <p className="text-xl font-semibold text-[oklch(0.47_0.17_28.33)]">
+      <SmoothStat end={24} suffix="/7" />
+    </p>
+    <p className="text-gray-500">Support</p>
+  </div>
 
-          <div  data-aos="fade-up" data-aos-delay="300">
-            <p className="text-xl font-semibold text-[oklch(0.47_0.17_28.33)]">
-              4.8★
-            </p>
-            <p className="text-gray-500">Client Rating</p>
-          </div>
+  <div data-aos="fade-up" data-aos-delay="300">
+    <p className="text-xl font-semibold text-[oklch(0.47_0.17_28.33)]">
+      <SmoothStat end={4.8} suffix="★" />
+    </p>
+    <p className="text-gray-500">Client Rating</p>
+  </div>
 
-        </div>
+</div>
 
       </div>
 
@@ -961,5 +961,112 @@ export default function Contact() {
 
 
 </section>
+  );
+}
+function ScrollCount({ end, suffix }) {
+
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+
+        if (entry.isIntersecting) {
+
+          let start = 0;
+
+          const interval = setInterval(() => {
+
+            start += Math.ceil(end / 80);
+
+            if (start >= end) {
+              start = end;
+              clearInterval(interval);
+            }
+
+            setCount(start);
+
+          }, 80);
+
+        } else {
+
+          setCount(0);
+
+        }
+
+      },
+      { threshold: 0.5 }
+    );
+
+    const element = document.getElementById(`count-${end}-${suffix}`);
+
+    if (element) observer.observe(element);
+
+    return () => {
+      if (element) observer.unobserve(element);
+    };
+
+  }, [end, suffix]);
+
+  return (
+    <span id={`count-${end}-${suffix}`}>
+      {count}{suffix}
+    </span>
+  );
+}
+function SmoothStat({ end, suffix }) {
+
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+
+        if (entry.isIntersecting) {
+
+          let start = 0;
+
+          const interval = setInterval(() => {
+
+            start += end / 80;
+
+            if (start >= end) {
+              start = end;
+              clearInterval(interval);
+            }
+
+            setCount(start);
+
+          }, 80);
+
+        } else {
+
+          setCount(0);
+
+        }
+
+      },
+      { threshold: 0.5 }
+    );
+
+    const element = document.getElementById(`smooth-${end}-${suffix}`);
+
+    if (element) observer.observe(element);
+
+    return () => {
+      if (element) observer.unobserve(element);
+    };
+
+  }, [end, suffix]);
+
+  return (
+    <span id={`smooth-${end}-${suffix}`}>
+      {Number.isInteger(end)
+        ? Math.floor(count)
+        : count.toFixed(1)}
+      {suffix}
+    </span>
   );
 }

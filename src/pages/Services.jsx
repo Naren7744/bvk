@@ -67,7 +67,7 @@ const services = [
 ];
   return (
     <section className="pt-[calc(var(--nav-height)+60px)] pb-20">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6">
 
         {/* HEADER */}
         <div className="text-center mb-14"  data-aos="fade-down">
