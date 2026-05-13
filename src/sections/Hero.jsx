@@ -41,8 +41,8 @@ export default function Hero() {
       <div
       className="relative z-10 flex-1 flex flex-col justify-center 
       container mx-auto px-5 sm:px-6
-      pt-[60px] sm:pt-[calc(var(--nav-height)+5px)] 
-      pb-2 sm:pb-2"
+      pt-[20px] sm:pt-[calc(var(--nav-height)+0px)] 
+      pb-0 sm:pb-0"
       >
 
         <div className="grid md:grid-cols-2 items-center gap-10">
