@@ -54,21 +54,9 @@ export default function Hero() {
   {t("heroBadge")}
 </p>
 
-           <h1
-className={`
-  ${
-    i18n.language === "ta"
-      ? "font-tamil text-[32px] sm:text-[46px] lg:text-[64px] leading-[1.22] font-semibold tracking-[-1px]"
-      : "font-hero text-[34px] sm:text-[48px] md:text-[70px] leading-[0.95] font-semibold tracking-wide"
-  }
-  mb-5
-`}
->
-  <span className="block mb-3" >{t("heroTitle1")}</span>
-  <span className="block">{t("heroTitle2")}</span>
-</h1>
+<HeroText />
 
-            <div className="w-12 h-[2px] bg-[oklch(0.47_0.17_28.33)] mb-4"></div>
+            <div className="w-12 h-[2px] bg-[oklch(0.47_0.17_28.33)] mt-4 mb-4"></div>
 
             <p
   className={`
@@ -266,5 +254,76 @@ function Feature({ icon, title, desc }) {
       </div>
 
     </div>
+  );
+}
+function HeroText() {
+
+  const fullText = "DREAMS INTO";
+
+  const [text, setText] = useState("");
+
+  useEffect(() => {
+
+    let index = 0;
+
+    const interval = setInterval(() => {
+
+      setText(fullText.slice(0, index + 1));
+
+      index++;
+
+      
+      if (index > fullText.length) {
+        index = 0;
+      }
+
+    }, 220);
+
+    return () => clearInterval(interval);
+
+  }, []);
+
+  return (
+
+<h1
+  className="
+    font-hero
+    text-[34px]
+    sm:text-[48px]
+    md:text-[70px]
+    leading-[0.95]
+    font-semibold
+    tracking-wide
+    text-white
+   
+  "
+>
+
+      {/* TYPEWRITER */}
+      <span className="block mb-3">
+
+        <span className="animated-gradient-text">
+  {text}
+</span>
+
+        {/* BLINKING CURSOR */}
+       <span
+  className="
+    animate-pulse
+    text-[oklch(0.47_0.17_28.33)]
+    drop-shadow-[0_0_10px_rgba(255,120,120,0.9)]
+  "
+>
+  |
+</span>
+
+      </span>
+
+      {/* STATIC TEXT */}
+      <span className="block mt-[20px]">
+        REALITY
+      </span>
+
+    </h1>
   );
 }
