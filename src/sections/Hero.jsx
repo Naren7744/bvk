@@ -50,7 +50,18 @@ export default function Hero() {
           {/* LEFT */}
           <div className="text-white " data-aos="fade-right">
 
-<p className="inline-block text-[#F5C542] text-[8px] sm:text-xs tracking-[4px] mb-3 px-2 py-[3px] rounded-sm backdrop-blur-[6px] bg-white/[0.04]">
+<p
+  className={`
+    inline-block text-[#F5C542] tracking-[4px] mb-3 rounded-sm
+    backdrop-blur-[6px] bg-white/[0.04] sm:mb-3
+
+    ${
+      i18n.language === "ta"
+        ? "text-[10px] sm:text-[12px] px-3 py-[5px] leading-[1.8]"
+        : "text-[10px] sm:text-[10px] px-2 py-[3px] leading-normal"
+    }
+  `}
+>
   {t("heroBadge")}
 </p>
 
@@ -58,20 +69,20 @@ export default function Hero() {
 
             <div className="w-12 h-[2px] bg-[oklch(0.47_0.17_28.33)] mt-4 mb-4"></div>
 
-            <p
+          <p
   className={`
     text-gray-300 mb-6 max-w-md
     ${
       i18n.language === "ta"
         ? "font-tamil text-[16px] sm:text-[17px] leading-[2]"
-        : "text-sm sm:text-base leading-relaxed"
+        : "text-[16px] sm:text-[19px] leading-[1.8]  sm:text-left px-1 sm:px-0"
     }
   `}
 >
-{t("heroDesc")}
-            </p>
+  {t("heroDesc")}
+</p>
 
-            <div className="flex flex-col sm:flex-row gap-3">
+  <div className="flex flex-col sm:flex-row gap-3">
 
 <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
 
