@@ -24,7 +24,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative w-full min-h-screen flex flex-col overflow-hidden pt-[20px] sm:pt-[calc(var(--nav-height)+5px)] ">
+    <section className="relative w-full min-h-screen flex flex-col overflow-hidden pt-[90px] sm:pt-[calc(var(--nav-height)+5px)] ">
 
       {/* BG */}
       <img
@@ -41,7 +41,7 @@ export default function Hero() {
       <div
       className="relative z-10 flex-1 flex flex-col justify-center 
       container mx-auto px-5 sm:px-6
-      pt-[90px] sm:pt-[calc(var(--nav-height)+5px)] 
+     
       pb-6 sm:pb-2"
       >
 
