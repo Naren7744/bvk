@@ -63,8 +63,8 @@ const projects = [
     filter === "All" ? projects : projects.filter((p) => p.type === filter);
 
   return (
-    <section className="pt-[calc(var(--nav-height)+60px)] pb-15 overflow-hidden bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto  sm:px-3 overflow-hidden">
+    <section className="pt-[calc(var(--nav-height)+60px)] pb-15 overflow-hidden bg-white">
+      <div className="max-w-7xl mx-auto  overflow-hidden">
 
         {/* HEADER */}
         <div className="text-center mb-14" data-aos="fade-down">
@@ -320,7 +320,7 @@ const projects = [
 </section>
 
         {/* ================= BLUEPRINT ================= */}
-        <div className="mt-13">
+        <div className="mt-13 px-4 sm:px-6">
 
           <div className="text-center mb-10" data-aos="fade-down">
             <p className="text-[oklch(0.47_0.17_28.33)] tracking-[4px] text-xs mb-2">
@@ -439,7 +439,7 @@ const projects = [
         </div>
 
         {/* YOUTUBE */}
-<div className="mt-28 text-center" data-aos="fade-up">
+<div className="mt-28 text-center px-4 sm:px-6" data-aos="fade-up">
   <h3 className="text-3xl font-bold mb-4">
     {t("blueprintPoint1")}
   </h3>
