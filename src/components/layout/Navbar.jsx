@@ -51,40 +51,82 @@ return () => window.removeEventListener("resize", setHeight);
 }, []);
 
 return ( <header ref={navRef} className="fixed top-0 left-0 w-full z-50 overflow-hidden">
-<div className={`max-w-7xl mx-auto px-6 py-3 flex items-center justify-between rounded-xl mt-3 transition-all duration-300
+<div className={`max-w-7xl mx-auto px-5 py-1 flex items-center justify-between rounded-xl mt-3 transition-all duration-300
 ${
   scrolled || !isHomePage
-    ? "bg-gradient-to-r from-[#0B1C2C]/40 via-[#0B1C2C]/70 to-[#0B1C2C]/16 backdrop-blur-2xl border border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.3)]"
+    ? "bg-gradient-to-r from-[#0B1C2C]/32 via-[#0B1C2C]/50 to-[#0B1C2C]/20 backdrop-blur-2xl border border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.3)]"
     : "bg-transparent"
 }`}
 >
 
 
     {/* LOGO */}
-    <div className="flex items-center gap-3 cursor-pointer group select-none">
-      <div className="relative flex items-center justify-center">
+<div className="flex items-center cursor-pointer group select-none">
 
-        <img
-          src="/logo.png"
-          alt="Bhaviksha Builders"
-          className="
-            h-12 w-auto object-contain
-            -translate-x-[18px]
-            transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]
-            group-hover:scale-[1.03]
-            group-hover:-translate-y-[1px]
-            group-hover:-translate-x-[9px]
-            drop-shadow-[0_2px_6px_rgba(0,0,0,0.2)]
-            group-hover:drop-shadow-[0_8px_20px_rgba(0,0,0,0.35)]
-          "
-        />
+  <div className="relative flex items-center justify-center">
 
-        <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100
-                        transition duration-500
-                        bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+    {/* GLOW BACKGROUND */}
+    <div
+      className="
+        absolute inset-0
+        rounded-full
+        bg-[radial-gradient(circle,rgba(255,255,255,0.12)_0%,transparent_70%)]
+        blur-2xl
+        opacity-70
+        scale-110
+        group-hover:scale-125
+        transition-all duration-700
+      "
+    />
 
-      </div>
-    </div>
+    {/* LOGO */}
+    <img
+      src="/logo.png"
+      alt="Bhaviksha Builders"
+      className="
+        relative z-10
+
+        h-[52px] sm:h-[68px] md:h-[78px]
+        w-auto object-contain
+
+        brightness-[1.12]
+        contrast-[1.08]
+        saturate-[1.08]
+
+        transition-all duration-500
+        ease-[cubic-bezier(0.4,0,0.2,1)]
+
+        group-hover:scale-[1.05]
+        group-hover:-translate-y-[2px]
+
+        drop-shadow-[0_4px_10px_rgba(0,0,0,0.28)]
+        group-hover:drop-shadow-[0_14px_30px_rgba(255,255,255,0.12)]
+      "
+    />
+
+    {/* SHINE EFFECT */}
+    <div
+      className="
+        pointer-events-none
+        absolute top-0 left-[-120%]
+        w-[50%] h-full
+
+        bg-gradient-to-r
+        from-transparent
+        via-white/25
+        to-transparent
+
+        skew-x-[-20deg]
+
+        group-hover:left-[130%]
+
+        transition-all duration-[1400ms]
+      "
+    />
+
+  </div>
+
+</div>
 
     {/* MENU */}
    <nav
@@ -134,7 +176,7 @@ ${
     <button
       onClick={() => i18n.changeLanguage("en")}
       className={`
-        min-w-[30px] h-[29px]
+        min-w-[30px] h-[28px]
         px-4
         flex items-center justify-center
         rounded-lg text-[12px] font-medium
@@ -153,7 +195,7 @@ ${
     <button
       onClick={() => i18n.changeLanguage("ta")}
       className={`
-        min-w-[30px] h-[29px]
+        min-w-[30px] h-[28px]
         px-4
         flex items-center justify-center
         rounded-lg text-[12px] font-medium
