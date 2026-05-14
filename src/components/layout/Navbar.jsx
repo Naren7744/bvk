@@ -85,10 +85,10 @@ ${
       src="/logo.png"
       alt="Bhaviksha Builders"
       className="
-        relative z-10
+        relative z-10 
 
-        h-[58px] sm:h-[58px] md:h-[70px]
-        w-auto object-contain
+        h-[55px] sm:h-[54px] md:h-[64px]
+        w-auto object-cover
 
         brightness-[1.12]
         contrast-[1.08]
