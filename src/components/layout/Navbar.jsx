@@ -51,7 +51,7 @@ return () => window.removeEventListener("resize", setHeight);
 }, []);
 
 return ( <header ref={navRef} className="fixed top-0 left-0 w-full z-50 overflow-hidden">
-<div className={`max-w-7xl mx-auto px-5 py-1 flex items-center justify-between rounded-xl mt-3 transition-all duration-300
+<div className={`max-w-7xl mx-auto px-5 py-2 md:py-1 flex items-center justify-between rounded-xl mt-3 transition-all duration-300
 ${
   scrolled || !isHomePage
     ? "bg-gradient-to-r from-[#0B1C2C]/32 via-[#0B1C2C]/50 to-[#0B1C2C]/20 backdrop-blur-2xl border border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.3)]"
@@ -86,7 +86,7 @@ ${
       className="
         relative z-10
 
-        h-[52px] sm:h-[68px] md:h-[78px]
+        h-[60px] sm:h-[70px] md:h-[78px]
         w-auto object-contain
 
         brightness-[1.12]
