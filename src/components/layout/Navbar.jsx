@@ -86,7 +86,7 @@ ${
       className="
         relative z-10
 
-        h-[60px] sm:h-[70px] md:h-[78px]
+        h-[62px] sm:h-[72px] md:h-[78px]
         w-auto object-contain
 
         brightness-[1.12]
@@ -246,7 +246,7 @@ ${
 
     {/* MOBILE ICON */}
     <button
-      className="md:hidden text-white text-xl"
+      className="md:hidden text-white text-[25px]"
       onClick={() => setOpen(!open)}
     >
       {open ? <FaTimes /> : <FaBars />}
