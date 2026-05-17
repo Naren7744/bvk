@@ -131,6 +131,11 @@ export default function Footer() {
           <div className="space-y-4 text-gray-400 text-sm mb-6">
             <p className="flex items-center gap-3">
               <FaPhoneAlt className="text-[oklch(0.47_0.17_28.33)]" /> +91 95852 75171
+
+            </p>
+              <p className="flex items-center gap-3">
+              <FaPhoneAlt className="text-[oklch(0.47_0.17_28.33)]" /> +91 86757 83639
+
             </p>
             <p className="flex items-center gap-3">
               <FaEnvelope className="text-[oklch(0.47_0.17_28.33)]" /> bhavikshabuilders@gmail.com

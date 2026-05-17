@@ -124,7 +124,7 @@ export default function Contact() {
     desc: t("card3Desc"),
     extra: t("card3Extra"),
     action: t("card3Action"),
-    link: "https://maps.google.com",
+    link: "ttps://www.google.com/maps?q=Salem,Tamil%20Nadu&output=embed",
       },
     ].map((item, i) => (
       <div

@@ -170,7 +170,7 @@ export default function About() {
 
     </div>
 {/* LEADERSHIP SECTION */}
-<div className="max-w-7xl mx-auto px-4 sm:px-6 py-14 sm:py-14">
+<div className="max-w-7xl mx-auto px-4 sm:px-6 py-1 sm:py-14">
 
   {/* TITLE */}
   <div className="text-center mb-16" data-aos="fade-up">
