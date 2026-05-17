@@ -479,5 +479,21 @@
 
   "successDesc": "Our team will review your project details and contact you within 24 hours with a detailed estimate.",
 
-  "close": "Close"
+  "close": "Close",
+  "leaderBadge": "OUR LEADERSHIP",
+"leaderTitle": "Meet Our Leadership Team",
+
+"founderRole": "Founder",
+"founderDesc": "With years of experience in the construction industry, S Chinraj founded Bhaviksha Builders with a vision to deliver quality-driven, durable, and trustworthy construction solutions. His leadership is built on integrity, customer satisfaction, and a commitment to excellence in every project.",
+
+"mdRole": "Managing Director",
+"mdDesc": "M Sathish leads the company with a modern architectural approach and strong technical expertise. His focus on innovative design, efficient planning, and professional execution ensures every project reflects quality, functionality, and long-term value.",
+"visionBadge": "OUR FOUNDATION",
+"visionTitle": "Vision & Mission",
+
+"visionHeading": "Our Vision",
+"visionDesc": "To become a trusted leader in modern and durable construction solutions by delivering excellence, innovation, and long-term value in every project we build.",
+
+"missionHeading": "Our Mission",
+"missionDesc": "To provide high-quality construction services with transparency, professional execution, customer satisfaction, and a strong commitment to timely project delivery."
 }

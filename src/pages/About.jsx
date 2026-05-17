@@ -169,6 +169,387 @@ export default function About() {
       </Link>
 
     </div>
+{/* LEADERSHIP SECTION */}
+<div className="max-w-7xl mx-auto px-4 sm:px-6 py-14 sm:py-14">
+
+  {/* TITLE */}
+  <div className="text-center mb-16" data-aos="fade-up">
+
+    <p
+      className={`
+        text-[oklch(0.47_0.17_28.33)]
+        tracking-[4px]
+        mb-4
+        ${
+          i18n.language === "ta"
+            ? "text-[11px]"
+            : "text-[10px]"
+        }
+      `}
+    >
+      {t("leaderBadge")}
+    </p>
+
+    <h2
+      className={`
+        font-bold text-[#0B1C2C]
+        ${
+          i18n.language === "ta"
+            ? "text-[30px] sm:text-[42px] leading-[1.35]"
+            : "text-4xl sm:text-5xl leading-tight"
+        }
+      `}
+    >
+      {t("leaderTitle")}
+    </h2>
+
+  </div>
+
+  {/* FOUNDER */}
+  <div
+    className="
+      grid lg:grid-cols-[420px_1fr]
+      gap-10 items-center
+      mb-20
+    "
+    data-aos="fade-up"
+  >
+
+    {/* IMAGE */}
+    <div className="relative group">
+
+      <div
+        className="
+          absolute -inset-2 rounded-[32px]
+          bg-gradient-to-br
+          from-[oklch(0.47_0.17_28.33/0.18)]
+          to-transparent
+          blur-xl opacity-70
+        "
+      />
+
+      <img
+        src="/Founder.jpeg"
+        alt="Founder"
+        className="
+          relative z-10
+          w-full h-[480px]
+          object-cover
+          rounded-[28px]
+          shadow-[0_20px_50px_rgba(0,0,0,0.12)]
+          transition duration-700
+          group-hover:scale-[1.02]
+        "
+      />
+
+    </div>
+
+    {/* CONTENT */}
+    <div>
+
+      <p
+        className={`
+          text-[oklch(0.47_0.17_28.33)]
+          font-semibold tracking-[3px]
+          mb-3
+          ${
+            i18n.language === "ta"
+              ? "text-[14px]"
+              : "text-sm"
+          }
+        `}
+      >
+        {t("founderRole")}
+      </p>
+
+      <h3
+        className={`
+          font-bold text-[#0B1C2C] mb-6
+          ${
+            i18n.language === "ta"
+              ? "text-[34px] leading-[1.3]"
+              : "text-5xl"
+          }
+        `}
+      >
+        S Chinraj
+      </h3>
+
+      <p
+        className={`
+          text-gray-600 max-w-2xl
+          ${
+            i18n.language === "ta"
+              ? "text-[15px] leading-[2]"
+              : "text-[17px] leading-relaxed"
+          }
+        `}
+      >
+        {t("founderDesc")}
+      </p>
+
+    </div>
+
+  </div>
+
+  {/* MD */}
+  <div
+    className="
+      grid lg:grid-cols-[1fr_420px]
+      gap-10 items-center
+    "
+    data-aos="fade-up"
+    data-aos-delay="100"
+  >
+
+    {/* CONTENT */}
+    <div className="lg:order-1 order-2">
+
+      <p
+        className={`
+          text-[oklch(0.47_0.17_28.33)]
+          font-semibold tracking-[3px]
+          mb-3
+          ${
+            i18n.language === "ta"
+              ? "text-[14px]"
+              : "text-sm"
+          }
+        `}
+      >
+        {t("mdRole")}
+      </p>
+
+      <h3
+        className={`
+          font-bold text-[#0B1C2C] mb-6
+          ${
+            i18n.language === "ta"
+              ? "text-[30px] leading-[1.35]"
+              : "text-5xl"
+          }
+        `}
+      >
+        M Sathish D.Arch, B.E.,
+      </h3>
+
+      <p
+        className={`
+          text-gray-600 max-w-2xl
+          ${
+            i18n.language === "ta"
+              ? "text-[15px] leading-[2]"
+              : "text-[17px] leading-relaxed"
+          }
+        `}
+      >
+        {t("mdDesc")}
+      </p>
+
+    </div>
+
+    {/* IMAGE */}
+    <div className="relative group lg:order-2 order-1">
+
+      <div
+        className="
+          absolute -inset-2 rounded-[32px]
+          bg-gradient-to-br
+          from-[oklch(0.47_0.17_28.33/0.18)]
+          to-transparent
+          blur-xl opacity-70
+        "
+      />
+
+      <img
+        src="/md.jpeg"
+        alt="Managing Director"
+        className="
+          relative z-10
+          w-full h-[480px]
+          object-cover
+          rounded-[28px]
+          shadow-[0_20px_50px_rgba(0,0,0,0.12)]
+          transition duration-700
+          group-hover:scale-[1.02]
+        "
+      />
+
+    </div>
+
+  </div>
+
+</div>
+{/* VISION & MISSION */}
+<div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-14">
+
+  {/* TOP TITLE */}
+  <div
+    className="text-center mb-14"
+    data-aos="fade-up"
+  >
+
+    <p
+      className={`
+        text-[oklch(0.47_0.17_28.33)]
+        tracking-[4px]
+        mb-4
+        ${
+          i18n.language === "ta"
+            ? "text-[11px]"
+            : "text-[10px]"
+        }
+      `}
+    >
+      {t("visionBadge")}
+    </p>
+
+    <h2
+      className={`
+        font-bold text-[#0B1C2C]
+        ${
+          i18n.language === "ta"
+            ? "text-[30px] sm:text-[42px] leading-[1.35]"
+            : "text-4xl sm:text-5xl leading-tight"
+        }
+      `}
+    >
+      {t("visionTitle")}
+    </h2>
+
+  </div>
+
+  {/* CARDS */}
+  <div className="grid md:grid-cols-2 gap-8">
+
+    {/* VISION */}
+    <div
+      className="
+        relative overflow-hidden rounded-[30px]
+        border border-gray-200
+        bg-white
+        p-8 sm:p-10
+        shadow-[0_10px_40px_rgba(0,0,0,0.06)]
+        hover:shadow-[0_20px_60px_rgba(0,0,0,0.12)]
+        transition-all duration-500
+      "
+      data-aos="fade-right"
+    >
+
+      {/* glow */}
+      <div className="absolute top-0 right-0 w-40 h-40 bg-[oklch(0.47_0.17_28.33/0.08)] blur-3xl rounded-full"></div>
+
+      <div className="relative z-10">
+
+        <div
+          className="
+            w-14 h-14 rounded-2xl
+            bg-[oklch(0.47_0.17_28.33)]
+            text-white
+            flex items-center justify-center
+            text-2xl
+            mb-6
+          "
+        >
+          ✦
+        </div>
+
+        <h3
+          className={`
+            font-bold text-[#0B1C2C] mb-5
+            ${
+              i18n.language === "ta"
+                ? "text-[28px] leading-[1.3]"
+                : "text-3xl"
+            }
+          `}
+        >
+          {t("visionHeading")}
+        </h3>
+
+        <p
+          className={`
+            text-gray-600
+            ${
+              i18n.language === "ta"
+                ? "text-[15px] leading-[2]"
+                : "text-[16px] leading-relaxed"
+            }
+          `}
+        >
+          {t("visionDesc")}
+        </p>
+
+      </div>
+
+    </div>
+
+    {/* MISSION */}
+    <div
+      className="
+        relative overflow-hidden rounded-[30px]
+        border border-gray-200
+        bg-[#0B1C2C]
+        text-white
+        p-8 sm:p-10
+        shadow-[0_10px_40px_rgba(0,0,0,0.08)]
+        hover:shadow-[0_20px_60px_rgba(0,0,0,0.16)]
+        transition-all duration-500
+      "
+      data-aos="fade-left"
+    >
+
+      {/* glow */}
+      <div className="absolute bottom-0 left-0 w-40 h-40 bg-white/10 blur-3xl rounded-full"></div>
+
+      <div className="relative z-10">
+
+        <div
+          className="
+            w-14 h-14 rounded-2xl
+            bg-white
+            text-[oklch(0.47_0.17_28.33)]
+            flex items-center justify-center
+            text-2xl
+            mb-6
+          "
+        >
+          ◆
+        </div>
+
+        <h3
+          className={`
+            font-bold mb-5
+            ${
+              i18n.language === "ta"
+                ? "text-[28px] leading-[1.3]"
+                : "text-3xl"
+            }
+          `}
+        >
+          {t("missionHeading")}
+        </h3>
+
+        <p
+          className={`
+            text-gray-300
+            ${
+              i18n.language === "ta"
+                ? "text-[15px] leading-[2]"
+                : "text-[16px] leading-relaxed"
+            }
+          `}
+        >
+          {t("missionDesc")}
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
 
   </div>
 </section>

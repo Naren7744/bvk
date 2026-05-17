@@ -87,7 +87,7 @@ ${
       className="
         relative z-10 
 
-        h-[55px] sm:h-[54px] md:h-[64px]
+        h-[50px] sm:h-[56px] md:h-[66px]
         w-auto object-cover
 
         brightness-[1.12]
